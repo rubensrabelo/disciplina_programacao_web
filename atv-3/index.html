@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Responsivo com Flex</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Blog do Rubens</h1>
+    <p>Compartilhando conhecimento, ideias e projetos</p>
+
+    <div class="theme-toggle">
+      <button id="toggleTheme">🌙</button>
+    </div>
+  </header>
+
+<nav>
+  <button id="hamburger" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+  <ul id="nav-links">
+    <li><a href="#">Início</a></li>
+    <li><a href="#">Projetos</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contato</a></li>
+  </ul>
+</nav>
+
+
+  <section class="container">
+    <aside>
+      <h3>Sobre mim</h3>
+      <p>Olá! Sou o Rubens. Apaixonado por dados, código e transformar ideias em soluções digitais.</p>
+      
+       <figure class="img-container">
+        <figcaption class="img-title">Imagem ilustrativa do Autor</figcaption>
+        <img src="./assets/img/img-pessoa.png" alt="Flask" class="img-main" />
+        <figcaption class="img-source">Fonte: Google Imagens</figcaption>
+      </figure>
+
+      <p>Atuo com análise de dados, desenvolvimento web e estou sempre em busca de novos aprendizados.</p>
+    </aside>
+
+    <main>
+      <article>
+        <h2>Começando com Flask</h2>
+        <p>Flask é um micro framework para aplicações web em Python. Leve, simples e ideal para APIs e projetos rápidos.</p>
+        
+        <figure class="img-container">
+          <figcaption class="img-title">Imagem ilustrativa do Flask</figcaption>
+          <img src="./assets/img/flask-python.jpg" alt="Flask" class="img-main" />
+          <figcaption class="img-source">Fonte: flask.palletsprojects.com</figcaption>
+        </figure>
+
+        <h3>Por que usar Flask?</h3>
+        <p>Oferece controle total, ótima documentação e flexibilidade para projetos personalizados.</p>
+      </article>
+
+      <article>
+        <h2>Power BI além do básico</h2>
+        <p>Depois de dominar o básico, é hora de explorar DAX avançado, visuais personalizados e modelagem eficiente.</p>
+        
+        <figure class="img-container">
+          <figcaption class="img-title">Dashboard no Power BI</figcaption>
+          <img src="./assets/img/power-bi.avif" alt="Power BI" class="img-main power-bi" />
+          <figcaption class="img-source">Fonte: microsoft.com</figcaption>
+        </figure>
+
+        <h3>Dicas para avançar</h3>
+        <p>Use medidas de forma estratégica, aplique transformações no Power Query e otimize o desempenho do seu modelo.</p>
+      </article>
+    </main>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rubens Rabelo - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="./assets/js/index.js"></script>
+</body>
+</html>
