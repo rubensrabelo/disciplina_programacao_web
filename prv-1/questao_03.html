@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Questão 03 - Imagem Pokémon</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    #value-number {
+      background-color: #000;
+      color: #fff;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="pokemonImage" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Pokémon">
+  <div id="value-number">
+    Valor atual: 1.
+  </div>
+
+  <div class="buttons">
+    <button onclick="changePokemon(-1)">Voltar -1</button>
+    <button onclick="changePokemon(1)">Adiantar +1</button>
+  </div>
+
+  <script>
+    let currentId = 1;
+
+    function changePokemon(delta) {
+      const img = document.getElementById('pokemonImage');
+      const div = document.getElementById('value-number')
+      let newId = currentId + delta;
+
+      if (newId < 1 || newId > 100) {
+        alert("Limite ultrapassado! O número do Pokémon deve estar entre 1 e 100.");
+        return;
+      }
+
+      currentId = newId;
+      img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${currentId}.svg`;
+      div.textContent = `Valor atual: ${currentId}.`
+    }
+  </script>
+
+</body>
+</html>
