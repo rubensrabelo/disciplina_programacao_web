@@ -1,5 +1,6 @@
 class Aluno {
-    constructor(nome, curso, IRA) {
+    constructor(id, nome, curso, IRA) {
+        this.id = id;
         this.nome = nome;
         this.curso = curso;
         this.IRA = IRA;
