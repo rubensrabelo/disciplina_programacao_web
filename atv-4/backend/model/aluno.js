@@ -6,4 +6,4 @@ class Aluno {
     }
 };
 
-module.exports = aluno;
+module.exports = Aluno;

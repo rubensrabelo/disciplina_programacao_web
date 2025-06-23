@@ -6,6 +6,8 @@ const alunosRouter = require("./router/alunos");
 const app = express();
 
 app.use(cors());
+app.use(express.json());
+
 app.use("/alunos", alunosRouter)
 
 app.listen(3000, () => {
