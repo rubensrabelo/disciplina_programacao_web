@@ -25,7 +25,10 @@ form.addEventListener('submit', async (e) => {
     const dados = await resposta.json();
 
     if (resposta.ok) {
-      mensagem.textContent = dados.mensagem;
+      const confirmado = confirm(dados.mensagem + " Deseja voltar para a página de visualização?");
+      if (confirmado) {
+        window.location.href = "visualizarAlunos.html";
+      }
       form.reset();
     } else {
       mensagem.textContent = dados.erro || 'Erro ao cadastrar.';
