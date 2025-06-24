@@ -6,7 +6,11 @@ async function carregarAlunos() {
     const tbody = document.querySelector('#tabela-alunos tbody');
     tbody.innerHTML = "";
 
+    let somaIRA = 0;
+
     alunos.forEach(aluno => {
+      somaIRA += parseFloat(aluno.IRA);
+
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td>${aluno.nome}</td>
@@ -17,18 +21,12 @@ async function carregarAlunos() {
       `;
       tbody.appendChild(tr);
     });
+
+    const mediaIRA = alunos.length > 0 ? (somaIRA / alunos.length).toFixed(2) : "0.00";
+    document.getElementById('media').textContent = `Média do IRA: ${mediaIRA}`;
+    
   } catch (erro) {
     console.error("Erro ao carregar alunos:", erro);
-  }
-}
-
-async function carregarMedia() {
-  try {
-    const response = await fetch('http://localhost:3000/alunos/media');
-    const dados = await response.json();
-    document.getElementById('media').textContent = `Média do IRA: ${dados.media}`;
-  } catch (erro) {
-    console.error("Erro ao carregar média:", erro);
   }
 }
 
@@ -46,7 +44,6 @@ async function excluirAluno(id) {
     if (resposta.ok) {
       alert("Aluno excluído com sucesso!");
       carregarAlunos();
-      carregarMedia();
     } else {
       alert(dados.erro || "Erro ao excluir aluno");
     }
@@ -57,4 +54,3 @@ async function excluirAluno(id) {
 }
 
 carregarAlunos();
-carregarMedia();

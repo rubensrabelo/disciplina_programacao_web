@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const AlunoService = require("../services/AlunoService");
+const AlunoService = require("../service/AlunoService");
 
 router.get("/listar", (req, res) => {
   const lista = AlunoService.listar();
