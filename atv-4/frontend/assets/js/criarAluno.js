@@ -6,7 +6,12 @@ form.addEventListener('submit', async (e) => {
 
   const nome = document.getElementById('nome').value;
   const curso = document.getElementById('curso').value;
-  const ira = document.getElementById('ira').value;
+  const IRA = document.getElementById('ira').value;
+
+  if (isNaN(IRA) || IRA < 0 || IRA > 10) {
+    mensagem.textContent = 'O IRA deve estar entre 0 e 10.';
+    return;
+  }
 
   try {
     const resposta = await fetch('http://localhost:3000/alunos/cadastrar', {
@@ -14,7 +19,7 @@ form.addEventListener('submit', async (e) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ nome, curso, IRA: ira })
+      body: JSON.stringify({ nome, curso, IRA })
     });
 
     const dados = await resposta.json();
