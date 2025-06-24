@@ -36,6 +36,7 @@ document.getElementById("form-editar").addEventListener("submit", async (e) => {
 
     if (resposta.ok) {
       document.getElementById("mensagem").textContent = "Aluno atualizado com sucesso!";
+      window.location.href = "visualizarAlunos.html";
     } else {
       document.getElementById("mensagem").textContent = dados.erro || "Erro ao atualizar.";
     }
