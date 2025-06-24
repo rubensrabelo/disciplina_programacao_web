@@ -40,8 +40,10 @@ document.getElementById("form-editar").addEventListener("submit", async (e) => {
     const dados = await resposta.json();
 
     if (resposta.ok) {
-      document.getElementById("mensagem").textContent = "Aluno atualizado com sucesso!";
-      window.location.href = "visualizarAlunos.html";
+      const confirmado = confirm("Aluno atualizado com sucesso! Deseja voltar para a página de visualização?");
+      if (confirmado) {
+        window.location.href = "visualizarAlunos.html";
+      }
     } else {
       document.getElementById("mensagem").textContent = dados.erro || "Erro ao atualizar.";
     }
