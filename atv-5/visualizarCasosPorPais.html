@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <a href="./visualizarCasosPorEstados.html">Visualizar por estado</a>
+
+    <h1>Dados referentes ao Covid por País</h1>
+
+    <table id="pais">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Número de Casos confirmados</th>
+                <th>Número de Falecimentos</th>
+            </tr>
+        </thead>
+    </table>
+
+    <div class="legenda">
+        <h3>Legenda</h3>
+        <ul>
+            <li><span class="caixa-cor acima-media"></span> Acima da média de falecimentos</li>
+            <li><span class="caixa-cor maior-relacao"></span> Maior relação Casos/Falecimentos</li>
+            <li><span class="caixa-cor menor-relacao"></span> Menor relação Casos/Falecimentos</li>
+        </ul>
+    </div>
+
+    <div id="media-num-casos"></div>
+    <div id="media-num-suspeitos"></div>
+    <div id="media-num-falecimentos"></div>
+
+    <script src="./assets/js/dadosPorPais.js"></script>
+</body>
+
+</html>
